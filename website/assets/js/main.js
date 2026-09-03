@@ -1,4 +1,39 @@
 (function () {
+  var heroSection = document.getElementById('uvod');
+  var heroVideo = document.getElementById('hero-video');
+  if (heroSection && heroVideo) {
+    var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var heroIsVisible = false;
+
+    function restartHeroVideo() {
+      if (prefersReducedMotion) return;
+      heroVideo.currentTime = 0;
+      var playPromise = heroVideo.play();
+      if (playPromise && playPromise.catch) {
+        playPromise.catch(function () {});
+      }
+    }
+
+    function pauseHeroVideo() {
+      heroVideo.pause();
+    }
+
+    if (!prefersReducedMotion && 'IntersectionObserver' in window) {
+      var heroObserver = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          heroIsVisible = entry.isIntersecting;
+          if (heroIsVisible) restartHeroVideo();
+          else pauseHeroVideo();
+        });
+      }, { threshold: 0.35 });
+      heroObserver.observe(heroSection);
+    }
+
+    heroVideo.addEventListener('ended', function () {
+      if (heroIsVisible) restartHeroVideo();
+    });
+  }
+
   var toggle = document.querySelector('.nav-toggle');
   var nav = document.querySelector('.nav');
   if (toggle && nav) {

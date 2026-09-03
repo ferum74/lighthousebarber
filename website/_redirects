@@ -1,0 +1,11 @@
+# Cloudflare Pages redirects
+# Staré cesty z Readymag verze webu (jednostránkový web -> kotvy).
+# /2/ a /3/ nešlo z kódu spolehlivě ověřit (obsah renderuje JS Readymagu) —
+# cíle prosím potvrď, výchozí volba je bezpečné 301 na homepage.
+/2/    /#o-nas      301
+/2     /#o-nas      301
+/3/    /#kontakt    301
+/3     /#kontakt    301
+
+# Fallback: cokoli dalšího ze staré struktury -> homepage
+/index.html    /    301

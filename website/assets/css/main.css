@@ -365,14 +365,20 @@ ul { margin: 0; padding-left: 0; list-style: none; }
   object-fit: cover;
   object-position: center;
 }
+.hero-demo__bg:not(video) {
+  display: block;
+}
+.hero--video .hero-demo__bg {
+  pointer-events: none;
+}
 .hero-demo__overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.5) 45%, rgba(0, 0, 0, 0.8) 100%);
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0.45) 45%, rgba(0, 0, 0, 0.75) 100%);
   pointer-events: none;
 }
 .hero-demo__overlay--side {
-  background: linear-gradient(90deg, rgba(0, 0, 0, 0.72) 0%, rgba(0, 0, 0, 0.25) 55%, transparent 100%);
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.67) 0%, rgba(0, 0, 0, 0.2) 55%, transparent 100%);
 }
 .hero-demo--photo {
   position: relative;

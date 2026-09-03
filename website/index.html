@@ -12,9 +12,15 @@
 <meta property="og:type" content="website">
 <meta property="og:locale" content="cs_CZ">
 <meta property="og:url" content="https://lighthousebarbershop.cz/">
+<meta property="og:site_name" content="Lighthouse Barber Shop">
+<meta property="og:image" content="https://lighthousebarbershop.cz/assets/images/hero-barbershop-interior.jpg">
+<meta property="og:image:width" content="1024">
+<meta property="og:image:height" content="576">
+<meta property="og:image:alt" content="Interiér Lighthouse Barber Shop v Praze">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Lighthouse Barber Shop | Profesionální barbershop">
 <meta name="twitter:description" content="Lighthouse Barber Shop — profesionální střihy, úprava vousů a péče o detail v příjemném prostředí. Hodnocení 5/5 z 137 recenzí.">
+<meta name="twitter:image" content="https://lighthousebarbershop.cz/assets/images/hero-barbershop-interior.jpg">
 <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
 <link rel="icon" href="assets/favicon-16x16.png" type="image/png" sizes="16x16">
 <link rel="icon" href="assets/favicon-32x32.png" type="image/png" sizes="32x32">
@@ -23,8 +29,91 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/main.css?v=37">
-<script defer src="assets/js/main.js"></script>
+<link rel="stylesheet" href="assets/css/main.css?v=39">
+<script defer src="assets/js/main.js?v=3"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BarberShop",
+      "@id": "https://lighthousebarbershop.cz/#strasnice",
+      "name": "Lighthouse Barber Shop — Strašnice",
+      "url": "https://lighthousebarbershop.cz/",
+      "image": "https://lighthousebarbershop.cz/assets/images/hero-barbershop-interior.jpg",
+      "logo": "https://lighthousebarbershop.cz/assets/images/logo/logo.png",
+      "telephone": "+420777861050",
+      "priceRange": "400–1100 Kč",
+      "currenciesAccepted": "CZK",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Černokostelecká 938/8",
+        "addressLocality": "Praha",
+        "addressRegion": "Praha",
+        "postalCode": "100 00",
+        "addressCountry": "CZ"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 50.076571,
+        "longitude": 14.4904059
+      },
+      "hasMap": "https://www.google.com/maps/place/Lighthouse+Barber+shop/@50.0765744,14.487831,17z/data=!3m1!4b1!4m6!3m5!1s0x470b933f9bf83475:0x8c07de35ee58be49!8m2!3d50.076571!4d14.4904059",
+      "sameAs": [
+        "https://www.google.com/maps/place/Lighthouse+Barber+shop/@50.076571,14.4904059,17z"
+      ],
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+          "opens": "09:00",
+          "closes": "19:00"
+        }
+      ],
+      "potentialAction": {
+        "@type": "ReserveAction",
+        "target": "https://n820285.alteg.io/"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5.0",
+        "reviewCount": "137"
+      }
+    },
+    {
+      "@type": "BarberShop",
+      "@id": "https://lighthousebarbershop.cz/#smichov",
+      "name": "Lighthouse Barber Shop — Smíchov",
+      "url": "https://lighthousebarbershop.cz/",
+      "image": "https://lighthousebarbershop.cz/assets/images/hero-barbershop-interior.jpg",
+      "logo": "https://lighthousebarbershop.cz/assets/images/logo/logo.png",
+      "telephone": "+420777086370",
+      "priceRange": "400–1100 Kč",
+      "currenciesAccepted": "CZK",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Nádražní 851/42",
+        "addressLocality": "Praha 5-Smíchov",
+        "addressRegion": "Praha",
+        "postalCode": "150 00",
+        "addressCountry": "CZ"
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+          "opens": "09:00",
+          "closes": "19:00"
+        }
+      ],
+      "potentialAction": {
+        "@type": "ReserveAction",
+        "target": "https://n820285.alteg.io/"
+      }
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <a class="skip-link" href="#uvod">Přeskočit na obsah</a>
@@ -41,16 +130,20 @@
   </div>
 </header>
 <main>
-<section class="hero hero--demo hero--photo" id="uvod">
-  <!-- Rollback: remove hero--photo and restore commented block below -->
-  <img
+<section class="hero hero--demo hero--photo hero--video" id="uvod">
+  <!-- Rollback: restore img below and remove hero--video + hero video script -->
+  <video
     class="hero-demo__bg"
-    src="assets/images/hero-barbershop-interior.jpg"
-    alt="Interiér Lighthouse Barber Shop v Praze"
-    loading="eager"
-    fetchpriority="high"
-    decoding="async"
+    id="hero-video"
+    muted
+    playsinline
+    preload="metadata"
+    poster="assets/images/hero-barbershop-interior.jpg"
+    aria-label="Interiér Lighthouse Barber Shop v Praze"
   >
+    <source src="assets/video/hero-720-hevc.mp4" type='video/mp4; codecs="hvc1"'>
+    <source src="assets/video/hero-720.mp4" type="video/mp4">
+  </video>
   <div class="hero-demo__overlay" aria-hidden="true"></div>
   <div class="hero-demo__overlay hero-demo__overlay--side" aria-hidden="true"></div>
   <div class="container hero-demo hero-demo--photo">
@@ -66,7 +159,7 @@
       <h1 class="hero-demo__title">Pánské holičství v Praze</h1>
       <p class="hero-demo__description">Síť Lighthouse Barber najdete ve Strašnicích a na Smíchově, kde nabízíme střih, vousy, balíčky i tónování. Precizní práce, pohodová atmosféra a výsledek, na který se můžete spolehnout.</p>
       <div class="hero-demo__actions">
-        <span class="btn btn--primary hero-demo__cta-primary">Objednat online</span>
+        <a class="btn btn--primary hero-demo__cta-primary" href="https://n820285.alteg.io/" target="_blank" rel="noopener noreferrer">Objednat online</a>
         <a class="btn btn--ghost hero-demo__cta-secondary" href="#kontakt">Kontakt</a>
       </div>
       <p class="hero-demo__trust"><span class="hero-demo__stars" aria-hidden="true">★★★★★</span> 5.0 · 137 recenzí</p>
@@ -255,6 +348,30 @@
     
     <div class="service-item__cta"><span class="btn btn--primary btn--compact service-item__book btn--disabled" aria-disabled="true">Objednat online</span></div>
   </div>
+</article><article class="service-item" data-service-item id="service-beard-neck-shave">
+  <div class="service-item__head">
+    <div class="service-item__main">
+      <div class="service-item__title-row">
+
+        <h3 class="service-item__title">Úprava vousů s holením krku (horký ručník + břitva)</h3>
+      </div>
+      <p class="service-item__meta">30 min · Úprava vousů strojkem doplněná o holení krku horkým ručníkem a břitvou.</p>
+    </div>
+    <div class="service-item__price">600 Kč</div>
+  </div>
+  <button class="service-item__toggle" type="button" data-service-toggle aria-expanded="false" aria-controls="service-details-beard-neck-shave">
+    Více informací
+  </button>
+  <div class="service-item__details" id="service-details-beard-neck-shave" data-service-details hidden>
+    <p class="service-item__full">Prémiová úprava vousů s precizním tvarováním, doplněná o tradiční holení krku horkým ručníkem a břitvou pro čistý a hladký přechod.</p>
+    <ul class="service-item__includes"><li>Konzultace tvaru vousů</li><li>Úprava délky a kontur strojkem</li><li>Holení krku břitvou</li><li>Horký ručník a zklidnění pokožky</li></ul>
+    <dl class="service-item__facts">
+      <div><dt>Délka</dt><dd>30 min</dd></div>
+      <div><dt>Cena</dt><dd>600 Kč</dd></div>
+    </dl>
+
+    <div class="service-item__cta"><span class="btn btn--primary btn--compact service-item__book btn--disabled" aria-disabled="true">Objednat online</span></div>
+  </div>
 </article><article class="service-item" data-service-item id="service-beard-shave">
   <div class="service-item__head">
     <div class="service-item__main">
@@ -307,11 +424,83 @@
     
     <div class="service-item__cta"><span class="btn btn--primary btn--compact service-item__book btn--disabled" aria-disabled="true">Objednat online</span></div>
   </div>
+</article><article class="service-item" data-service-item id="service-haircut-beard-neck-shave-combo">
+  <div class="service-item__head">
+    <div class="service-item__main">
+      <div class="service-item__title-row">
+
+        <h3 class="service-item__title">Pánský střih + Úprava vousů s holením krku / Holení vousů (Top barber)</h3>
+      </div>
+      <p class="service-item__meta">1 hod 30 min · Kompletní péče o vlasy i vousy včetně holení krku břitvou.</p>
+    </div>
+    <div class="service-item__price">1 200 Kč</div>
+  </div>
+  <button class="service-item__toggle" type="button" data-service-toggle aria-expanded="false" aria-controls="service-details-haircut-beard-neck-shave-combo">
+    Více informací
+  </button>
+  <div class="service-item__details" id="service-details-haircut-beard-neck-shave-combo" data-service-details hidden>
+    <p class="service-item__full">Komplexní balíček služeb pro muže, kteří chtějí dokonalý výsledek — pánský střih v kombinaci s úpravou vousů s holením krku, nebo s kompletním holením vousů.</p>
+    <ul class="service-item__includes"><li>Konzultace s holičem</li><li>Mytí hlavy</li><li>Pánský střih</li><li>Úprava vousů s holením krku / holení vousů</li><li>Styling a finální úprava</li></ul>
+    <dl class="service-item__facts">
+      <div><dt>Délka</dt><dd>1 hod 30 min</dd></div>
+      <div><dt>Cena</dt><dd>1 200 Kč</dd></div>
+    </dl>
+
+    <div class="service-item__cta"><span class="btn btn--primary btn--compact service-item__book btn--disabled" aria-disabled="true">Objednat online</span></div>
+  </div>
+</article><article class="service-item" data-service-item id="service-clipper-cut-beard-combo">
+  <div class="service-item__head">
+    <div class="service-item__main">
+      <div class="service-item__title-row">
+
+        <h3 class="service-item__title">Střih strojkem + vousy (Top barber)</h3>
+      </div>
+      <p class="service-item__meta">1 hod · Rychlá a čistá úprava vlasů strojkem v kombinaci s úpravou vousů.</p>
+    </div>
+    <div class="service-item__price">1 000 Kč</div>
+  </div>
+  <button class="service-item__toggle" type="button" data-service-toggle aria-expanded="false" aria-controls="service-details-clipper-cut-beard-combo">
+    Více informací
+  </button>
+  <div class="service-item__details" id="service-details-clipper-cut-beard-combo" data-service-details hidden>
+    <p class="service-item__full">Komplexní balíček zaměřený na rychlý, čistý a upravený výsledek — střih strojkem na jednu délku v kombinaci s úpravou vousů.</p>
+    <ul class="service-item__includes"><li>Střih strojkem na jednu délku</li><li>Úprava vousů strojkem</li><li>Zklidnění pokožky</li><li>Finální úprava</li></ul>
+    <dl class="service-item__facts">
+      <div><dt>Délka</dt><dd>1 hod</dd></div>
+      <div><dt>Cena</dt><dd>1 000 Kč</dd></div>
+    </dl>
+
+    <div class="service-item__cta"><span class="btn btn--primary btn--compact service-item__book btn--disabled" aria-disabled="true">Objednat online</span></div>
+  </div>
 </article>
   </div>
 </div><div id="services-panel-tonovani" class="services-panel" data-services-panel="tonovani" role="tabpanel" hidden>
   <div class="services-panel__list">
-    <article class="service-item" data-service-item id="service-hair-toning">
+    <article class="service-item" data-service-item id="service-beard-toning">
+  <div class="service-item__head">
+    <div class="service-item__main">
+      <div class="service-item__title-row">
+
+        <h3 class="service-item__title">Tónování vousů</h3>
+      </div>
+      <p class="service-item__meta">30 min · Jemné sjednocení odstínu vousů a osvěžení vzhledu.</p>
+    </div>
+    <div class="service-item__price">500 Kč</div>
+  </div>
+  <button class="service-item__toggle" type="button" data-service-toggle aria-expanded="false" aria-controls="service-details-beard-toning">
+    Více informací
+  </button>
+  <div class="service-item__details" id="service-details-beard-toning" data-service-details hidden>
+    <p class="service-item__full">Krásné vousy jsou luxusním doplňkem mužského vzhledu — tónování jemně sjednotí odstín, zakryje prošedivělé vousy a osvěží celkový dojem.</p>
+
+    <dl class="service-item__facts">
+      <div><dt>Délka</dt><dd>30 min</dd></div>
+      <div><dt>Cena</dt><dd>500 Kč</dd></div>
+    </dl>
+    <p class="service-item__notes">Doporučujeme konzultaci před první návštěvou.</p>
+    <div class="service-item__cta"><span class="btn btn--primary btn--compact service-item__book btn--disabled" aria-disabled="true">Objednat online</span></div>
+  </div>
+</article><article class="service-item" data-service-item id="service-hair-toning">
   <div class="service-item__head">
     <div class="service-item__main">
       <div class="service-item__title-row">
@@ -388,7 +577,7 @@
     <button class="gallery-carousel__arrow gallery-carousel__arrow--prev" type="button" data-carousel-prev aria-label="Předchozí">‹</button>
     <button class="gallery-carousel__arrow gallery-carousel__arrow--next" type="button" data-carousel-next aria-label="Další">›</button>
   </div>
-  <div class="gallery-carousel__dots" role="tablist" aria-label="Galerie"><button class="gallery-carousel__dot is-active" type="button" data-slide-to="0" aria-label="Snímek 1"></button><button class="gallery-carousel__dot" type="button" data-slide-to="1" aria-label="Snímek 2"></button><button class="gallery-carousel__dot" type="button" data-slide-to="2" aria-label="Snímek 3"></button><button class="gallery-carousel__dot" type="button" data-slide-to="3" aria-label="Snímek 4"></button><button class="gallery-carousel__dot" type="button" data-slide-to="4" aria-label="Snímek 5"></button><button class="gallery-carousel__dot" type="button" data-slide-to="5" aria-label="Snímek 6"></button><button class="gallery-carousel__dot" type="button" data-slide-to="6" aria-label="Snímek 7"></button></div>
+  <div class="gallery-carousel__dots" role="group" aria-label="Galerie — výběr snímku"><button class="gallery-carousel__dot is-active" type="button" data-slide-to="0" aria-label="Snímek 1"></button><button class="gallery-carousel__dot" type="button" data-slide-to="1" aria-label="Snímek 2"></button><button class="gallery-carousel__dot" type="button" data-slide-to="2" aria-label="Snímek 3"></button><button class="gallery-carousel__dot" type="button" data-slide-to="3" aria-label="Snímek 4"></button><button class="gallery-carousel__dot" type="button" data-slide-to="4" aria-label="Snímek 5"></button><button class="gallery-carousel__dot" type="button" data-slide-to="5" aria-label="Snímek 6"></button><button class="gallery-carousel__dot" type="button" data-slide-to="6" aria-label="Snímek 7"></button></div>
 </div>
     <script type="application/json" id="gallery-data">[{"src":"assets/images/gallery-01.jpg","alt":"Interiér barbershopu — barbeři při práci","caption":""},{"src":"assets/images/gallery-02.jpg","alt":"Styling fénem v salonu","caption":""},{"src":"assets/images/gallery-03.jpg","alt":"Barber při střihu u zrcadla","caption":""},{"src":"assets/images/gallery-04.jpg","alt":"Precizní střih nůžkami","caption":""},{"src":"assets/images/gallery-05.jpg","alt":"Atmosféra salonu — dvě pracovní stanice","caption":""},{"src":"assets/images/gallery-06.jpg","alt":"Střih v odrazu zrcadla","caption":""},{"src":"assets/images/gallery-07.jpg","alt":"Interiér Lighthouse Barber Shop","caption":""}]</script>
     <div class="gallery-lightbox" data-gallery-lightbox hidden>
@@ -518,17 +707,18 @@ Vždy je zde respektující přístup ke klientům a vysoká kvalita služeb. Ob
           <li class="contact__item"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 18a2 2 0 100-4 2 2 0 000 4zm-4.2-3.1a6 6 0 018.4 0l1.4-1.4a8 8 0 00-11.2 0l1.4 1.4zM4.9 9.5a12 12 0 0114.2 0l1.4-1.4a14 14 0 00-17 0l1.4 1.4z" fill="currentColor"/></svg><div><span class="contact__label">Wi-Fi</span><span>Pro zákazníky zdarma</span></div></li>
           <li class="contact__item"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h7a6 6 0 010 12H10v6H6V3zm4 8h3a2 2 0 000-4h-3v4z" fill="currentColor"/></svg><div><span class="contact__label">Parkování</span><span>V okolí dostupné</span></div></li>
         </ul>
-        <a class="btn btn--primary btn--map" href="https://www.google.com/maps/place/Lighthouse+Barber+shop/@50.0765744,14.487831,17z/data=!3m1!4b1!4m6!3m5!1s0x470b933f9bf83475:0x8c07de35ee58be49!8m2!3d50.076571!4d14.4904059!16s%2Fg%2F11vf583kg4?entry=ttu&amp;g_ep=EgoyMDI2MDYyOS4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" aria-label="Navigovat na adresu"><span>Navigovat</span></a>
+        <a class="btn btn--primary btn--map" href="https://n820285.alteg.io/" target="_blank" rel="noopener noreferrer" aria-label="Objednat online"><span>Objednat</span></a>
       </div>
       <div class="contact__panel card reveal" style="--reveal-delay:90ms">
         <h3 class="contact__brand">Lighthouse Barber Shop</h3>
         <ul class="contact__list">
           <li class="contact__item"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 00-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 00-7-7zm0 9.5A2.5 2.5 0 119.5 9 2.5 2.5 0 0112 11.5z" fill="currentColor"/></svg><div><span class="contact__label">Adresa</span><span>Nádražní 851/42, 150 00 Praha 5-Smíchov</span></div></li>
+          <li class="contact__item"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.9 15.9 0 006.6 6.6l2.2-2.2a1 1 0 011-.24 11.4 11.4 0 003.6.58 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.4 11.4 0 00.58 3.6 1 1 0 01-.24 1z" fill="currentColor"/></svg><div><span class="contact__label">Telefon</span><a href="tel:+420777086370">777 086 370</a></div></li>
           <li class="contact__item"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm1 11H7v-2h4V7h2v6z" fill="currentColor"/></svg><div><span class="contact__label">Otevírací doba</span><span>Celý týden 9:00–19:00</span></div></li>
           <li class="contact__item"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 18a2 2 0 100-4 2 2 0 000 4zm-4.2-3.1a6 6 0 018.4 0l1.4-1.4a8 8 0 00-11.2 0l1.4 1.4zM4.9 9.5a12 12 0 0114.2 0l1.4-1.4a14 14 0 00-17 0l1.4 1.4z" fill="currentColor"/></svg><div><span class="contact__label">Wi‑Fi</span><span>Pro zákazníky zdarma</span></div></li>
           <li class="contact__item"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h7a6 6 0 010 12H10v6H6V3zm4 8h3a2 2 0 000-4h-3v4z" fill="currentColor"/></svg><div><span class="contact__label">Parkování</span><span>V okolí dostupné</span></div></li>
         </ul>
-        <a class="btn btn--primary btn--map" href="https://www.google.com/maps/place/N%C3%A1dra%C5%BEn%C3%AD+851%2F42,+150+00+Praha+5-Sm%C3%ADchov/@50.0623539,14.4094767,17z/data=!3m1!4b1!4m6!3m5!1s0x470b945b595c0717:0x176046630c495cac!8m2!3d50.0623539!4d14.4094767!16s%2Fg%2F11snqwsz07!18m1!1e1?entry=ttu&amp;g_ep=EgoyMDI2MDcwNS4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" aria-label="Navigovat na adresu — Praha 5-Smíchov"><span>Navigovat</span></a>
+        <a class="btn btn--primary btn--map" href="https://n820285.alteg.io/" target="_blank" rel="noopener noreferrer" aria-label="Objednat online"><span>Objednat</span></a>
       </div>
     </div>
   </div>
@@ -566,6 +756,6 @@ Vždy je zde respektující přístup ke klientům a vysoká kvalita služeb. Ob
     <a class="site-footer__top" href="#uvod">Zpět nahoru</a>
   </div>
 </footer>
-<a class="floating-cta btn btn--primary" href="#kontakt" aria-label="Objednat">Objednat</a>
+<a class="floating-cta btn btn--primary" href="https://n820285.alteg.io/" target="_blank" rel="noopener noreferrer" aria-label="Objednat">Objednat</a>
 </body>
 </html>
