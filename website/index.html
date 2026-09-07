@@ -21,6 +21,8 @@
 <meta name="twitter:title" content="Lighthouse Barber Shop | Profesionální barbershop">
 <meta name="twitter:description" content="Lighthouse Barber Shop — profesionální střihy, úprava vousů a péče o detail v příjemném prostředí. Hodnocení 5/5 z 137 recenzí.">
 <meta name="twitter:image" content="https://lighthousebarbershop.cz/assets/images/hero-barbershop-interior.jpg">
+<!-- Přeneseno ze staré verze webu — ověření domény pro Meta Business Manager (Pixel 347501964648805) -->
+<meta name="facebook-domain-verification" content="fu6x4x23lb2az8gt4il4d8j68e8zll">
 <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
 <link rel="icon" href="assets/favicon-16x16.png" type="image/png" sizes="16x16">
 <link rel="icon" href="assets/favicon-32x32.png" type="image/png" sizes="32x32">
@@ -29,8 +31,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/main.css?v=39">
-<script defer src="assets/js/main.js?v=3"></script>
+<link rel="stylesheet" href="assets/css/main.css?v=42">
+<script defer src="assets/js/consent.js?v=2"></script>
+<script defer src="assets/js/main.js?v=5"></script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -108,7 +111,7 @@
       ],
       "potentialAction": {
         "@type": "ReserveAction",
-        "target": "https://n820285.alteg.io/"
+        "target": "https://n1455549.alteg.io/"
       }
     }
   ]
@@ -159,7 +162,19 @@
       <h1 class="hero-demo__title">Pánské holičství v Praze</h1>
       <p class="hero-demo__description">Síť Lighthouse Barber najdete ve Strašnicích a na Smíchově, kde nabízíme střih, vousy, balíčky i tónování. Precizní práce, pohodová atmosféra a výsledek, na který se můžete spolehnout.</p>
       <div class="hero-demo__actions">
-        <a class="btn btn--primary hero-demo__cta-primary" href="https://n820285.alteg.io/" target="_blank" rel="noopener noreferrer">Objednat online</a>
+        <div class="hero-demo__cta-menu" data-cta-menu>
+          <button class="btn btn--primary hero-demo__cta-primary" type="button" data-cta-toggle aria-haspopup="true" aria-expanded="false" aria-controls="hero-cta-menu">Objednat online</button>
+          <div class="hero-demo__cta-list" id="hero-cta-menu" role="menu" aria-label="Vyberte pobočku pro rezervaci">
+            <a class="hero-demo__cta-option" data-cta-option role="menuitem" href="https://n1455549.alteg.io/" target="_blank" rel="noopener noreferrer">
+              <span class="hero-demo__cta-option-name">Smíchov</span>
+              <span class="hero-demo__cta-option-addr">Nádražní 851/42</span>
+            </a>
+            <a class="hero-demo__cta-option" data-cta-option role="menuitem" href="https://n820285.alteg.io/" target="_blank" rel="noopener noreferrer">
+              <span class="hero-demo__cta-option-name">Strašnice</span>
+              <span class="hero-demo__cta-option-addr">Černokostelecká 938/8</span>
+            </a>
+          </div>
+        </div>
         <a class="btn btn--ghost hero-demo__cta-secondary" href="#kontakt">Kontakt</a>
       </div>
       <p class="hero-demo__trust"><span class="hero-demo__stars" aria-hidden="true">★★★★★</span> 5.0 · 137 recenzí</p>
@@ -718,7 +733,7 @@ Vždy je zde respektující přístup ke klientům a vysoká kvalita služeb. Ob
           <li class="contact__item"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 18a2 2 0 100-4 2 2 0 000 4zm-4.2-3.1a6 6 0 018.4 0l1.4-1.4a8 8 0 00-11.2 0l1.4 1.4zM4.9 9.5a12 12 0 0114.2 0l1.4-1.4a14 14 0 00-17 0l1.4 1.4z" fill="currentColor"/></svg><div><span class="contact__label">Wi‑Fi</span><span>Pro zákazníky zdarma</span></div></li>
           <li class="contact__item"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h7a6 6 0 010 12H10v6H6V3zm4 8h3a2 2 0 000-4h-3v4z" fill="currentColor"/></svg><div><span class="contact__label">Parkování</span><span>V okolí dostupné</span></div></li>
         </ul>
-        <a class="btn btn--primary btn--map" href="https://n820285.alteg.io/" target="_blank" rel="noopener noreferrer" aria-label="Objednat online"><span>Objednat</span></a>
+        <a class="btn btn--primary btn--map" href="https://n1455549.alteg.io/" target="_blank" rel="noopener noreferrer" aria-label="Objednat online"><span>Objednat</span></a>
       </div>
     </div>
   </div>
@@ -747,15 +762,45 @@ Vždy je zde respektující přístup ke klientům a vysoká kvalita služeb. Ob
     <div>
       <h3 class="site-footer__title">Sociální sítě</h3>
       <div class="site-footer__social">
-        <a href="https://www.google.com/maps/place/Lighthouse+Barber+shop/@50.0765744,14.487831,17z/data=!3m1!4b1!4m6!3m5!1s0x470b933f9bf83475:0x8c07de35ee58be49!8m2!3d50.076571!4d14.4904059!16s%2Fg%2F11vf583kg4?entry=ttu&amp;g_ep=EgoyMDI2MDYyOS4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" aria-label="Navigovat na adresu">Navigovat</a>
+        <a href="https://www.instagram.com/lighthouse_barbershop_/?igshid=MzRlODBiNWFlZA%3D%3D" target="_blank" rel="noopener noreferrer" aria-label="Lighthouse Barber Shop na Instagramu">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2.2c3.2 0 3.6 0 4.9.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.86s0 3.6-.07 4.86c-.05 1.17-.25 1.8-.41 2.23a3.7 3.7 0 0 1-.9 1.38 3.7 3.7 0 0 1-1.38.9c-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.9.07s-3.63 0-4.9-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23-.06-1.27-.07-1.65-.07-4.86s.01-3.6.07-4.86c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38a3.7 3.7 0 0 1 1.38-.9c.42-.16 1.06-.36 2.23-.41C8.4 2.2 8.8 2.2 12 2.2Zm0 1.8c-3.14 0-3.5.01-4.74.07-.9.04-1.38.19-1.7.32-.43.16-.74.36-1.06.68-.32.32-.52.63-.68 1.06-.13.32-.28.8-.32 1.7C3.21 8.5 3.2 8.86 3.2 12s.01 3.5.07 4.74c.04.9.19 1.38.32 1.7.16.43.36.74.68 1.06.32.32.63.52 1.06.68.32.13.8.28 1.7.32 1.24.06 1.6.07 4.74.07s3.5-.01 4.74-.07c.9-.04 1.38-.19 1.7-.32.43-.16.74-.36 1.06-.68.32-.32.52-.63.68-1.06.13-.32.28-.8.32-1.7.06-1.24.07-1.6.07-4.74s-.01-3.5-.07-4.74c-.04-.9-.19-1.38-.32-1.7a2.9 2.9 0 0 0-.68-1.06 2.9 2.9 0 0 0-1.06-.68c-.32-.13-.8-.28-1.7-.32C15.5 4.01 15.14 4 12 4Zm0 3.06A4.94 4.94 0 1 1 12 16.94 4.94 4.94 0 0 1 12 7.06Zm0 1.8a3.14 3.14 0 1 0 0 6.28 3.14 3.14 0 0 0 0-6.28Zm5.14-.35a1.15 1.15 0 1 1 0 2.3 1.15 1.15 0 0 1 0-2.3Z"/></svg>
+        </a>
+        <a href="https://www.facebook.com/profile.php?id=61551661241099" target="_blank" rel="noopener noreferrer" aria-label="Lighthouse Barber Shop na Facebooku">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5 3.66 9.15 8.44 9.94v-7.03H7.9v-2.9h2.54V9.85c0-2.52 1.5-3.91 3.77-3.91 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.78-1.63 1.57v1.89h2.78l-.44 2.9h-2.34V22c4.78-.79 8.44-4.94 8.44-9.94Z"/></svg>
+        </a>
+        <a href="https://www.google.com/maps/place/Lighthouse+Barber+shop/@50.0765744,14.487831,17z/data=!3m1!4b1!4m6!3m5!1s0x470b933f9bf83475:0x8c07de35ee58be49!8m2!3d50.076571!4d14.4904059!16s%2Fg%2F11vf583kg4?entry=ttu&amp;g_ep=EgoyMDI2MDYyOS4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" aria-label="Navigovat na adresu">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a7 7 0 00-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 00-7-7zm0 9.5A2.5 2.5 0 1112 6.5a2.5 2.5 0 010 5z"/></svg>
+        </a>
       </div>
     </div>
   </div>
   <div class="container site-footer__bottom">
     <p class="site-footer__copy">© 2026 Lighthouse Barber Shop. Všechna práva vyhrazena.</p>
-    <a class="site-footer__top" href="#uvod">Zpět nahoru</a>
+    <span class="site-footer__legal">
+      <a href="zasady-ochrany-osobnich-udaju.html">Zásady ochrany osobních údajů</a>
+      <button type="button" class="site-footer__cookie-btn" onclick="if(window.lhOpenConsent)window.lhOpenConsent()">Nastavení cookies</button>
+      <a class="site-footer__top" href="#uvod">Zpět nahoru</a>
+    </span>
   </div>
 </footer>
-<a class="floating-cta btn btn--primary" href="https://n820285.alteg.io/" target="_blank" rel="noopener noreferrer" aria-label="Objednat">Objednat</a>
+<div class="floating-cta" id="floating-cta" data-cta-menu>
+  <button class="floating-cta__toggle btn btn--primary" type="button" data-cta-toggle aria-haspopup="true" aria-expanded="false" aria-controls="floating-cta-menu">Objednat</button>
+  <div class="floating-cta__menu" id="floating-cta-menu" role="menu" aria-label="Vyberte pobočku pro rezervaci">
+    <a class="floating-cta__option" data-cta-option role="menuitem" href="https://n1455549.alteg.io/" target="_blank" rel="noopener noreferrer">
+      <span class="floating-cta__option-name">Smíchov</span>
+      <span class="floating-cta__option-addr">Nádražní 851/42</span>
+    </a>
+    <a class="floating-cta__option" data-cta-option role="menuitem" href="https://n820285.alteg.io/" target="_blank" rel="noopener noreferrer">
+      <span class="floating-cta__option-name">Strašnice</span>
+      <span class="floating-cta__option-addr">Černokostelecká 938/8</span>
+    </a>
+  </div>
+</div>
+<noscript>
+  <!-- Meta Pixel fallback pro prohlížeče bez JS. Pozn.: bez JS nelze ověřit souhlas,
+       tento pixel se u ~<1 % návštěv bez JS spustí bez consentu — viz report. -->
+  <img height="1" width="1" style="display:none" alt=""
+    src="https://www.facebook.com/tr?id=347501964648805&ev=PageView&noscript=1">
+</noscript>
 </body>
 </html>

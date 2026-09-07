@@ -133,22 +133,186 @@ ul { margin: 0; padding-left: 0; list-style: none; }
   right: max(1.75rem, calc(env(safe-area-inset-right) + 1rem));
   bottom: max(2.35rem, calc(env(safe-area-inset-bottom) + 1.6rem));
   z-index: 999;
+}
+.floating-cta__toggle {
   width: auto;
-  padding: 0.75rem 1.25rem;
+  padding: 0.75rem 1.5rem 0.75rem 1.25rem;
   font-size: var(--wf-type-small);
   border: 1px solid rgba(15, 23, 42, 0.14);
   box-shadow:
     0 22px 55px -30px rgba(15, 23, 42, 0.55),
     0 0 0 3px rgba(15, 23, 42, 0.06);
+  cursor: pointer;
   will-change: transform;
 }
-.floating-cta:hover { transform: translateY(-2px); }
-.floating-cta:focus-visible {
+.floating-cta__toggle::after {
+  content: "";
+  width: 0.5rem;
+  height: 0.5rem;
+  margin-left: 0.15rem;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: rotate(45deg) translateY(-1px);
+  transition: transform 200ms ease;
+}
+.floating-cta:hover .floating-cta__toggle,
+.floating-cta.is-open .floating-cta__toggle { transform: translateY(-2px); }
+.floating-cta:hover .floating-cta__toggle::after,
+.floating-cta:focus-within .floating-cta__toggle::after,
+.floating-cta.is-open .floating-cta__toggle::after { transform: rotate(-135deg) translateY(-1px); }
+.floating-cta__toggle:focus-visible {
   outline: none;
   box-shadow:
     0 22px 55px -30px rgba(15, 23, 42, 0.55),
     0 0 0 3px rgba(15, 23, 42, 0.10),
     0 0 0 6px rgba(212, 168, 83, 0.28);
+}
+
+/* --- vyskakovací výběr pobočky nad plovoucím tlačítkem --- */
+.floating-cta__menu {
+  position: absolute;
+  right: 0;
+  bottom: 100%;
+  margin-bottom: 0.7rem;
+  min-width: 15rem;
+  max-width: calc(100vw - 2rem);
+  display: flex;
+  flex-direction: column;
+  background: var(--wf-color-surface);
+  border: 1px solid var(--wf-color-border);
+  border-radius: var(--wf-radius-card);
+  box-shadow: var(--wf-shadow-card-hover);
+  overflow: hidden;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(8px);
+  transition: opacity 180ms ease, transform 180ms ease, visibility 180ms;
+}
+/* neviditelný můstek, ať hover nespadne v mezeře mezi tlačítkem a menu */
+.floating-cta__menu::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 100%;
+  height: 0.7rem;
+}
+.floating-cta:hover .floating-cta__menu,
+.floating-cta:focus-within .floating-cta__menu,
+.floating-cta.is-open .floating-cta__menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+.floating-cta__option {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  padding: 0.75rem 1rem;
+  text-decoration: none;
+  color: var(--wf-color-text);
+  transition: background 150ms ease;
+}
+.floating-cta__option + .floating-cta__option {
+  border-top: 1px solid var(--wf-color-border);
+}
+.floating-cta__option:hover,
+.floating-cta__option:focus-visible {
+  background: var(--wf-color-surface-alt);
+  outline: none;
+}
+.floating-cta__option-name {
+  font-weight: 600;
+  font-size: var(--wf-type-small);
+}
+.floating-cta__option-addr {
+  font-size: 0.8125rem;
+  color: var(--wf-color-text-muted);
+}
+
+/* --- hero: výběr pobočky POD tlačítkem „Objednat online“ --- */
+.hero-demo__cta-menu {
+  position: relative;
+  display: inline-flex;
+  z-index: 5;
+}
+.hero-demo__cta-primary[data-cta-toggle] { cursor: pointer; }
+.hero-demo__cta-primary::after {
+  content: "";
+  width: 0.5rem;
+  height: 0.5rem;
+  margin-left: 0.15rem;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: rotate(45deg) translateY(-2px);
+  transition: transform 200ms ease;
+  flex-shrink: 0;
+}
+.hero-demo__cta-menu:hover .hero-demo__cta-primary::after,
+.hero-demo__cta-menu:focus-within .hero-demo__cta-primary::after,
+.hero-demo__cta-menu.is-open .hero-demo__cta-primary::after {
+  transform: rotate(-135deg) translateY(2px);
+}
+.hero-demo__cta-list {
+  position: absolute;
+  left: 0;
+  top: 100%;
+  margin-top: 0.6rem;
+  min-width: 16rem;
+  max-width: calc(100vw - 2.5rem);
+  display: flex;
+  flex-direction: column;
+  background: var(--wf-color-surface);
+  border: 1px solid var(--wf-color-border);
+  border-radius: var(--wf-radius-card);
+  box-shadow: var(--wf-shadow-card-hover);
+  overflow: hidden;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-8px);
+  transition: opacity 180ms ease, transform 180ms ease, visibility 180ms;
+  z-index: 20;
+}
+/* neviditelný můstek nad menu, ať hover nespadne v mezeře */
+.hero-demo__cta-list::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 100%;
+  height: 0.6rem;
+}
+.hero-demo__cta-menu:hover .hero-demo__cta-list,
+.hero-demo__cta-menu:focus-within .hero-demo__cta-list,
+.hero-demo__cta-menu.is-open .hero-demo__cta-list {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+.hero-demo__cta-option {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  padding: 0.8rem 1.1rem;
+  text-decoration: none;
+  color: var(--wf-color-text);
+  transition: background 150ms ease;
+}
+.hero-demo__cta-option + .hero-demo__cta-option {
+  border-top: 1px solid var(--wf-color-border);
+}
+.hero-demo__cta-option:hover,
+.hero-demo__cta-option:focus-visible {
+  background: var(--wf-color-surface-alt);
+  outline: none;
+}
+.hero-demo__cta-option-name {
+  font-weight: 600;
+  font-size: var(--wf-type-small);
+}
+.hero-demo__cta-option-addr {
+  font-size: 0.8125rem;
+  color: var(--wf-color-text-muted);
 }
 
 .badge {
@@ -1362,12 +1526,16 @@ ul { margin: 0; padding-left: 0; list-style: none; }
   .hero-demo__actions { flex-direction: column; align-items: stretch; }
   .btn { width: 100%; }
   .floating-cta {
-    width: auto;
     right: max(1rem, calc(env(safe-area-inset-right) + 0.75rem));
     bottom: max(1.25rem, calc(env(safe-area-inset-bottom) + 1rem));
-    padding: 0.735rem 1.21rem;
+  }
+  .floating-cta__toggle {
+    width: auto;
+    padding: 0.735rem 1.5rem 0.735rem 1.21rem;
     font-size: calc(var(--wf-type-small) * 1.05);
   }
+  .floating-cta__menu { min-width: 13.5rem; }
+  .floating-cta__option { padding: 0.9rem 1rem; }
   .contact__phone-row { flex-direction: column; align-items: stretch; }
   .grid--reviews { grid-template-columns: 1fr; }
   .site-footer__bottom { flex-direction: column; align-items: flex-start; }
@@ -1392,3 +1560,104 @@ ul { margin: 0; padding-left: 0; list-style: none; }
 }
 .skip-link:focus { left: 1rem; }
 
+
+/* --- Sociální ikony v patičce ------------------------------------------- */
+.site-footer__social a svg {
+  width: 20px;
+  height: 20px;
+}
+
+.site-footer__legal {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+.site-footer__legal a,
+.site-footer__cookie-btn {
+  color: rgba(255, 255, 255, 0.72);
+  font-size: var(--wf-type-small);
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  font-family: inherit;
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+.site-footer__legal a:hover,
+.site-footer__cookie-btn:hover { color: #fff; }
+
+/* --- Cookie banner (GDPR) ---------------------------------------------------
+ * position: fixed → mimo tok dokumentu → nulový CLS. */
+.cookie-banner {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10000;
+  background: var(--wf-color-primary);
+  color: var(--wf-color-text-inverse);
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow: 0 -12px 40px -18px rgba(0, 0, 0, 0.55);
+  transform: translateY(100%);
+  transition: transform 300ms ease;
+  padding: env(safe-area-inset-bottom) 0 0;
+}
+.cookie-banner.is-visible { transform: translateY(0); }
+.cookie-banner__inner {
+  max-width: var(--wf-container);
+  margin: 0 auto;
+  padding: 1rem clamp(1rem, 3vw, 2rem);
+  display: flex;
+  align-items: center;
+  gap: 1rem 1.5rem;
+  flex-wrap: wrap;
+}
+.cookie-banner__text {
+  margin: 0;
+  flex: 1 1 320px;
+  font-size: var(--wf-type-small);
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.82);
+}
+.cookie-banner__link { color: #fff; }
+.cookie-banner__actions {
+  display: flex;
+  gap: 0.6rem;
+  flex-shrink: 0;
+}
+.cookie-banner__actions .btn { white-space: nowrap; }
+.cookie-banner__actions .btn--ghost {
+  color: #fff;
+  background: transparent;
+  border-color: rgba(255, 255, 255, 0.4);
+}
+.cookie-banner__actions .btn--ghost:hover { background: rgba(255, 255, 255, 0.1); }
+
+/* plovoucí CTA se během zobrazeného banneru skryje, ať se nepřekrývají */
+body.has-cookie-banner .floating-cta {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+@media (max-width: 560px) {
+  .cookie-banner__actions { width: 100%; }
+  .cookie-banner__actions .btn { flex: 1 1 auto; text-align: center; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cookie-banner { transition: none; }
+  .floating-cta__menu { transition: opacity 120ms ease, visibility 120ms; transform: none; }
+  .floating-cta:hover .floating-cta__menu,
+  .floating-cta:focus-within .floating-cta__menu,
+  .floating-cta.is-open .floating-cta__menu { transform: none; }
+  .floating-cta__toggle,
+  .floating-cta__toggle::after { transition: none; }
+  .hero-demo__cta-list { transition: opacity 120ms ease, visibility 120ms; transform: none; }
+  .hero-demo__cta-menu:hover .hero-demo__cta-list,
+  .hero-demo__cta-menu:focus-within .hero-demo__cta-list,
+  .hero-demo__cta-menu.is-open .hero-demo__cta-list { transform: none; }
+  .hero-demo__cta-primary::after { transition: none; }
+}

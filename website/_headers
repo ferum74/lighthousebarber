@@ -5,3 +5,13 @@
 /*
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
+
+# --- Content Security Policy -------------------------------------------------
+# Na webu ŽÁDNÁ CSP zatím není (nic neblokuje Google/Meta).
+# Pokud ji přidáš, musí povolit domény měřicích kódů. Ověřená varianta:
+# (odkomentuj celý blok níž a nech ho v sekci /* )
+#
+#  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://connect.facebook.net; connect-src 'self' https://www.googletagmanager.com https://www.google-analytics.com https://region1.google-analytics.com https://connect.facebook.net https://www.facebook.com; img-src 'self' data: https://www.googletagmanager.com https://www.google-analytics.com https://www.facebook.com https://www.google.com https://googleads.g.doubleclick.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; frame-src https://td.doubleclick.net; base-uri 'self'; form-action 'self'
+#
+# Pozn.: gtag.js i fbevents.js vyžadují 'unsafe-inline' ve script-src
+# (inline bootstrap v consent.js přidává <script> tagy). Bez nonce/hash to jinak nejde.

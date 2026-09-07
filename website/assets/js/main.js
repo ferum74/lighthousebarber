@@ -323,4 +323,46 @@
     }
     }
   }
+
+  // Výběr pobočky pod CTA tlačítky (plovoucí tlačítko + hero).
+  // Desktop: otevře se najetím myší (CSS). Mobil / klávesnice: klik / šipky.
+  document.querySelectorAll('[data-cta-menu]').forEach(function (root) {
+    var toggle = root.querySelector('[data-cta-toggle]');
+    var options = root.querySelectorAll('[data-cta-option]');
+    if (!toggle) return;
+
+    function openMenu(focusFirst) {
+      root.classList.add('is-open');
+      toggle.setAttribute('aria-expanded', 'true');
+      if (focusFirst && options[0]) {
+        window.requestAnimationFrame(function () { options[0].focus(); });
+      }
+    }
+    function closeMenu(focusToggle) {
+      root.classList.remove('is-open');
+      toggle.setAttribute('aria-expanded', 'false');
+      if (focusToggle) toggle.focus();
+    }
+
+    toggle.addEventListener('click', function () {
+      if (root.classList.contains('is-open')) closeMenu();
+      else openMenu(false);
+    });
+    toggle.addEventListener('keydown', function (event) {
+      if (event.key === 'ArrowUp' || event.key === 'ArrowDown') {
+        event.preventDefault();
+        openMenu(true);
+      }
+    });
+    document.addEventListener('click', function (event) {
+      if (root.classList.contains('is-open') && !root.contains(event.target)) closeMenu();
+    });
+    document.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape' && root.classList.contains('is-open')) closeMenu(true);
+    });
+    // po volbě pobočky menu zavřeme (odkaz se stejně otevírá v nové kartě)
+    options.forEach(function (opt) {
+      opt.addEventListener('click', function () { closeMenu(false); });
+    });
+  });
 })();
