@@ -1,0 +1,25 @@
+{
+  "name": "lighthouse",
+  "version": "1.0.0",
+  "description": "Папка `website/` — это полностью готовый статический билд сайта (HTML/CSS/JS + все медиа в `assets/`).",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "optimize-images": "node scripts/optimize-images.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ferum74/lighthousebarber.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/ferum74/lighthousebarber/issues"
+  },
+  "homepage": "https://github.com/ferum74/lighthousebarber#readme",
+  "dependencies": {
+    "sharp": "^0.35.4"
+  }
+}
